@@ -30,6 +30,10 @@ public class PlaceObjectsOnPlane : MonoBehaviour
     public GameObject textObject;
     public GameObject visualIndicator;
 
+    public AudioSource SFXSource;
+    public AudioClip[] SFXClips;
+
+
     private GameObject hitObject;
 
     private bool planeVisualizerIsON;
@@ -86,6 +90,8 @@ public class PlaceObjectsOnPlane : MonoBehaviour
         {
             if (hit.transform.gameObject.tag == "Ground")
             {
+                SFXSource.PlayOneShot(SFXClips[Random.Range(1, SFXClips.Length)]);
+
                 if (secondCreatureSpawned)
                     textObject.SetActive(false);
 
@@ -98,11 +104,11 @@ public class PlaceObjectsOnPlane : MonoBehaviour
 
                 if (placedPrefabs.Length != 0)
                 {
-                    spawnedObject = Instantiate(placedPrefabs[Random.Range(0, placedPrefabs.Length)], hit.point + Vector3.up * 0.5f, Quaternion.Euler(spawnMarker.transform.localRotation.x, arCamera.transform.localRotation.y - Random.Range(150f, 210f), spawnMarker.transform.localRotation.z));
+                    spawnedObject = Instantiate(placedPrefabs[Random.Range(0, placedPrefabs.Length)], hit.point + Vector3.up * 0.5f, Quaternion.Euler(spawnMarker.transform.localRotation.x, arCamera.transform.localRotation.y - Random.Range(120f, 220f), spawnMarker.transform.localRotation.z));
                 }
                 else
                 {
-                    spawnedObject = Instantiate(m_PlacedPrefab, hit.point + Vector3.up * 0.5f, Quaternion.Euler(spawnMarker.transform.localRotation.x, arCamera.transform.localRotation.y - Random.Range(150f, 210f), spawnMarker.transform.localRotation.z));
+                    spawnedObject = Instantiate(m_PlacedPrefab, hit.point + Vector3.up * 0.5f, Quaternion.Euler(spawnMarker.transform.localRotation.x, arCamera.transform.localRotation.y - Random.Range(120f, 220f), spawnMarker.transform.localRotation.z));
                 }
             }
         }
@@ -116,6 +122,8 @@ public class PlaceObjectsOnPlane : MonoBehaviour
         {
             groundPlaced = true;
             startState = false;
+
+            SFXSource.PlayOneShot(SFXClips[0]);
         }
 
     }
