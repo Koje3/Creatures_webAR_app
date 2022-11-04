@@ -140,6 +140,11 @@ public class PlaceObjectsOnPlane : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && groundPlaced)
         {
+            if (Input.mousePosition.y > Screen.width * 0.9f)
+            {
+                return;
+            }
+
             PlaceObject();
         }
 
