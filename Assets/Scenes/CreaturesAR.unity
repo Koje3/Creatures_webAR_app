@@ -2301,12 +2301,12 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
-    m_Resolution: 3
+    m_Type: 2
+    m_Resolution: 2
     m_CustomResolution: -1
-    m_Strength: 0.669
-    m_Bias: 0.296
-    m_NormalBias: 0.4
+    m_Strength: 0.86
+    m_Bias: 0.01
+    m_NormalBias: 0.45
     m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
@@ -3077,12 +3077,12 @@ LightingSettings:
   serializedVersion: 3
   m_GIWorkflowMode: 1
   m_EnableBakedLightmaps: 1
-  m_EnableRealtimeLightmaps: 0
+  m_EnableRealtimeLightmaps: 1
   m_RealtimeEnvironmentLighting: 1
   m_BounceScale: 1
   m_AlbedoBoost: 1.31
   m_IndirectOutputScale: 1
-  m_UsingShadowmask: 0
+  m_UsingShadowmask: 1
   m_BakeBackend: 1
   m_LightmapMaxSize: 2048
   m_BakeResolution: 40
@@ -3093,7 +3093,7 @@ LightingSettings:
   m_CompAOExponent: 1
   m_CompAOExponentDirect: 0
   m_ExtractAO: 0
-  m_MixedBakeMode: 0
+  m_MixedBakeMode: 2
   m_LightmapsBakeMode: 0
   m_FilterMode: 1
   m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
