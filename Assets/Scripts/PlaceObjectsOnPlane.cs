@@ -123,7 +123,9 @@ public class PlaceObjectsOnPlane : MonoBehaviour
             groundPlaced = true;
             startState = false;
 
+            SFXSource.volume = 0.6f;
             SFXSource.PlayOneShot(SFXClips[0]);
+            SFXSource.volume = 0.45f;
         }
 
     }
